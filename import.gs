@@ -6,7 +6,7 @@ function Importcontacts() {
 
     clearSheet(sheet);
 
-    sheet.appendRow(['id', 'Display Name','Given Name','Last Name','Email Address']); // Creating Header
+    sheet.appendRow(['id', 'Display Name', 'Given Name', 'Last Name', 'Email Address']); // Creating Header
     for (var i in contacts) {
         var contact = contacts[i];
         var id = contact.getId(); //get contact id
@@ -18,7 +18,7 @@ function Importcontacts() {
         for (email in emails) {
             emailList.push(emails[email].getAddress());
         }
-        var contactData = [id, displayName,givenName,lastName, emailList[0]];
+        var contactData = [id, displayName, givenName, lastName, emailList[0]];
         sheet.appendRow(contactData); // append contact data to active sheet 
         var lastRow = sheet.getLastRow();
         var range = sheet.getRange(lastRow, contactData.length + 1); // getRange() can take 'A1' notation or (row, column) for a single cell
